@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { AuthProvider } from './APIrequests/AuthContext';
+import Register from './Pages/Auth/Register';
+import Login from './Pages/Auth/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <h1>React Authentication with Spring Boot</h1>
+        <Register />
+        <Login />
+      </div>
+    </AuthProvider>
   );
 }
 
